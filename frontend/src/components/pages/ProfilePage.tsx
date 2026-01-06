@@ -30,15 +30,17 @@ const ProfilePage = () => {
     >
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-bold">Profile</h1>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setIsEditing(true)}
-          className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg transition-colors flex items-center"
-        >
-          <Edit size={18} className="mr-2" />
-          Edit Profile
-        </motion.button>
+        {!isEditing && (
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsEditing(true)}
+            className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg transition-colors flex items-center"
+          >
+            <Edit size={18} className="mr-2" />
+            Edit Profile
+          </motion.button>
+        )}
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
